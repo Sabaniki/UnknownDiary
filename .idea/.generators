@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Settings><!--このファイルは Ruby プラグインにより自動的に生成されました。
+以下を行えます。 
+1. ジェネレーターの並び替え
+2. ジェネレーターの除去
+3. インストール済みのジェネレーターの追加
+新たにインストールされたジェネレーターを自動的に追加するには、このファイルを削除してからプロジェクトを再ロードしてください。
+--><GeneratorsGroup><Generator name="active_record:application_record" /><Generator name="application_record" /><Generator name="assets" /><Generator name="channel" /><Generator name="controller" /><Generator name="generator" /><Generator name="helper" /><Generator name="integration_test" /><Generator name="jbuilder" /><Generator name="job" /><Generator name="mailbox" /><Generator name="mailer" /><Generator name="migration" /><Generator name="model" /><Generator name="resource" /><Generator name="scaffold" /><Generator name="scaffold_controller" /><Generator name="system_test" /><Generator name="task" /><Generator name="test_unit:channel" /><Generator name="test_unit:generator" /><Generator name="test_unit:mailbox" /><Generator name="test_unit:plugin" /></GeneratorsGroup></Settings>
