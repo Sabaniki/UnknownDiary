@@ -32,7 +32,7 @@ class DiariesController < ApplicationController
       today = new_day
     end
     @diary.created_day_id = today.id
-    # @diary.is_edited = false
+    @diary.is_edited = false
     respond_to do |format|
       if @diary.save
         format.html { redirect_to @diary, notice: 'Diary was successfully created.' }
@@ -58,6 +58,16 @@ class DiariesController < ApplicationController
     end
   end
 
+  def self.first_20chars(diary)
+    local_text = diary.text
+    local_text.length <= 20 ? local_text : local_text[0, 20] + '...'
+  end
+
+  def created_day(diary)
+    CreatedDay.find(diary.created_day_id).day
+  end
+
+
   # DELETE /diaries/1
   # DELETE /diaries/1.json
   def destroy
@@ -81,6 +91,6 @@ class DiariesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def diary_params
-    params.require(:diary).permit(:text, :is_edited)
+    params.require(:diary).permit(:text)
   end
 end
