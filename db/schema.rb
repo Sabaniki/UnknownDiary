@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_01_06_064036) do
   end
 
   create_table "diaries", force: :cascade do |t|
+    t.string "title"
     t.string "text"
     t.integer "created_day_id"
     t.boolean "is_edited"

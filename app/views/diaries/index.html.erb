@@ -5,7 +5,7 @@
 <table class="table">
   <thead>
   <tr>
-    <th>内容</th>
+    <th>タイトル</th>
     <th>投稿された日</th>
     <th colspan="2"></th>
   </tr>
@@ -14,9 +14,10 @@
   <tbody>
   <% @diaries.each do |diary| %>
     <tr>
-      <td><%= DiariesController::first_20chars diary %></td>
-      <td><%= DiariesController::get_created_day diary%></td>
-      <td><%= link_to '全文を読む', diary %></td>
+<!--      <td><%#= DiariesController::first_20chars diary %></td>-->
+      <td><%= diary.title %></td>
+      <td><a href="/created_days/<%= diary.created_day_id %>"><%= DiariesController::get_created_day diary%></a></td>
+      <td><button type="button" class="btn btn-dark"><%= link_to '本文を読む', diary, {class: "text-white"} %></button></td>
       <!--        <td><%#= link_to '結末を', edit_diary_path(diary) %></td>-->
       <!--        <td><%#= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
     </tr>
@@ -50,4 +51,5 @@
 
 <br>
 
-<%= link_to 'New Diary', new_diary_path %>
+
+<button type="button" class="btn btn-dark"><%= link_to '日記を投稿する', new_diary_path, {class: "text-white"} %></button>

@@ -1,9 +1,18 @@
 <p id="notice"><%= notice %></p>
+<h1><%= @created_day.day %>に投稿された日記一覧</h1>
 
-<p>
-  <strong>Day:</strong>
-  <%= @created_day.day %>
-</p>
+<table class="table">
+  <tbody>
+  <% @created_day.diaries.each do |diary| %>
+    <tr>
+      <td><%= DiariesController::first_20chars diary %></td>
+      <td><%= link_to '全文を読む', diary %></td>
+      <!--        <td><%#= link_to '結末を', edit_diary_path(diary) %></td>-->
+      <!--        <td><%#= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_created_day_path(@created_day) %> |
-<%= link_to 'Back', created_days_path %>
+<!--<%#= link_to 'Edit', edit_created_day_path(@created_day) %> |-->
+<%#= link_to 'Back', created_days_path %>
