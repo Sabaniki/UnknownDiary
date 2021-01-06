@@ -6,7 +6,7 @@
   <% @created_day.diaries.each do |diary| %>
     <tr>
       <td><%= diary.title %></td>
-      <td><%= link_to '全文を読む', diary %></td>
+      <td><button type="button" class="btn btn-dark"><%= link_to '本文を読む', diary, {class: "text-white"} %></button></td>
       <!--        <td><%#= link_to '結末を', edit_diary_path(diary) %></td>-->
       <!--        <td><%#= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
     </tr>
