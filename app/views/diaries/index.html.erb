@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>みんなの日記</h1>
+<h1>誰かの日記</h1>
 
 <table class="table">
   <thead>
@@ -14,12 +14,14 @@
   <tbody>
   <% @diaries.each do |diary| %>
     <tr>
-<!--      <td><%#= DiariesController::first_20chars diary %></td>-->
+      <!--      <td><%#= DiariesController::first_20chars diary %></td>-->
       <td><%= diary.title %></td>
-      <td><a href="/created_days/<%= diary.created_day_id %>"><%= DiariesController::get_created_day diary%></a></td>
-      <td><button type="button" class="btn btn-dark"><%= link_to '本文を読む', diary, {class: "text-white"} %></button></td>
+      <td><a href="/created_days/<%= diary.created_day_id %>"><%= DiariesController::get_created_day diary %></a></td>
+      <td>
+        <button type="button" class="btn btn-dark"><%= link_to '本文を読む', diary, {class: "text-white"} %></button>
+      </td>
       <!--        <td><%#= link_to '結末を', edit_diary_path(diary) %></td>-->
-      <!--        <td><%#= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      <td><%= link_to 'Destroy', diary, method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>
   </tbody>

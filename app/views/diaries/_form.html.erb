@@ -12,13 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label "タイトル" %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :text %>
-    <%= form.text_field :text %>
+    <%= form.label "内容" %>
+
+<!--    https://www.web-knowledge-info.com/wp/ruby-on-rails32/ を参考にAction Textを導入しました-->
+    <%= form.rich_text_area :text %>
   </div>
 
 <!--  <div class="field">-->
@@ -26,12 +28,12 @@
     <%#= form.number_field :created_day_id %>
 <!--  </div>-->
 
-<!--  <div class="field">-->
-    <%#= form.label :is_edited %>
-    <%#= form.check_box :is_edited %>
-<!--  </div>-->
+  <div class="field">
+    <%= form.label "誰かに過去を変えられたくない！" %>
+    <%= form.check_box :is_edited %>
+  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "日記を投稿する", class:"btn btn-dark"%>
   </div>
 <% end %>

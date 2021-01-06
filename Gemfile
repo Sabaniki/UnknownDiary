@@ -65,3 +65,6 @@ gem 'uglifier'
 group :production do
   gem 'pg'
 end
+
+# Actiontext用
+gem 'image_processing', '~> 1.2'

@@ -32,7 +32,6 @@ class DiariesController < ApplicationController
       today = new_day
     end
     @diary.created_day_id = today.id
-    @diary.is_edited = false
     respond_to do |format|
       if @diary.save
         format.html { redirect_to @diary, notice: 'Diary was successfully created.' }
@@ -91,6 +90,6 @@ class DiariesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def diary_params
-    params.require(:diary).permit(:title, :text)
+    params.require(:diary).permit(:title, :text, :is_edited)
   end
 end
