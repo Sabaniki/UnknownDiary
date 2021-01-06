@@ -25,14 +25,14 @@ class DiariesController < ApplicationController
   # POST /diaries.json
   def create
     @diary = Diary.new(diary_params)
-    today = CreatedDay.find_by(day: DateTime.now)
+    today = CreatedDay.find_by(day: Date.today)
     if today.nil?
       new_day = CreatedDay.new(day: Date.today)
       new_day.save
       today = new_day
     end
     @diary.created_day_id = today.id
-    @diary.is_edited = false
+    # @diary.is_edited = false
     respond_to do |format|
       if @diary.save
         format.html { redirect_to @diary, notice: 'Diary was successfully created.' }
@@ -81,6 +81,6 @@ class DiariesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def diary_params
-    params.require(:diary).permit(:text)
+    params.require(:diary).permit(:text, :is_edited)
   end
 end

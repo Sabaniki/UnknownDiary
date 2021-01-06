@@ -17,7 +17,7 @@
         <td><%= diary.first_20chars %></td>
         <td><%= diary.created_day%></td>
         <td><%= link_to '全文を読む', diary %></td>
-<!--        <td><%#= link_to '結末を', edit_diary_path(diary) %></td>-->
+        <td><%= link_to '結末を変更する', edit_diary_path(diary) %></td>
 <!--        <td><%#= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
 <% end %>
