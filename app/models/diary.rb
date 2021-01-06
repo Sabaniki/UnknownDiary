@@ -7,6 +7,7 @@ class Diary < ApplicationRecord
   end
 
   def created_day
-    CreatedDay.find(created_day_id).day
+    at = CreatedDay.find(created_day_id)
+    at.nil? ? nil : at.day
   end
 end
