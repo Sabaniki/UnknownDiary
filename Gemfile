@@ -57,8 +57,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # add bootstrap
-gem 'bootstrap'
-gem 'jquery-rails'
+# gem 'bootstrap'
+# gem 'jquery-rails'
 
 # heroku用に追記
 group :production do
