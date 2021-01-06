@@ -5,7 +5,7 @@
   <tbody>
   <% @created_day.diaries.each do |diary| %>
     <tr>
-      <td><%= DiariesController::first_20chars diary %></td>
+      <td><%= diary.title %></td>
       <td><%= link_to '全文を読む', diary %></td>
       <!--        <td><%#= link_to '結末を', edit_diary_path(diary) %></td>-->
       <!--        <td><%#= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
