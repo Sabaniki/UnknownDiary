@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_01_06_143401) do
   create_table "diaries", force: :cascade do |t|
     t.string "title"
     t.text "text"
+    t.text "last"
     t.integer "created_day_id"
     t.boolean "is_edited"
     t.datetime "created_at", precision: 6, null: false

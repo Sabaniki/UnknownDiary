@@ -8,20 +8,20 @@
 
 <!--<p>-->
 <!--  <strong>Is edited:</strong>-->
-  <%#= @diary.is_edited %>
+<%#= @diary.is_edited %>
 <!--</p>-->
 
 <!--https://getbootstrap.jp/docs/4.2/components/card/ を参考にしました-->
 <div class="card">
   <div class="card-body">
     <h5 class="card-title"><%= @diary.title %>  (<%= @diary.created_day.day %>投稿)</h5>
-    <p class="card-text"><%= @diary.text %></p>
+    <p class="card-text"><%= @diary.text %><%= @diary.last %></p>
   </div>
 </div>
 <br>
 <% if !@diary.is_edited %>
   <button type="button" class="btn btn-dark"> <%= link_to 'この日記の結末を変える', edit_diary_path(@diary), class: "text-white" %></button>
 <% else %>
-  この日記は既に編集されているか、投稿者が許可していません。
+  この日記は既に結末が変更されているか、投稿者が変更を許可していません。
 <% end %>
 <%= link_to 'Back', diaries_path %>

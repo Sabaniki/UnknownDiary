@@ -32,9 +32,11 @@ class DiariesController < ApplicationController
       today = new_day
     end
     @diary.created_day_id = today.id
+    @diary.last = ""
+
     respond_to do |format|
       if @diary.save
-        format.html { redirect_to @diary, notice: 'Diary was successfully created.' }
+        format.html { redirect_to @diary, notice: '日記が投稿されました！' }
         format.json { render :show, status: :created, location: @diary }
       else
         format.html { render :new }
@@ -47,6 +49,7 @@ class DiariesController < ApplicationController
   # PATCH/PUT /diaries/1.json
   def update
     respond_to do |format|
+      @diary.is_edited = true
       if @diary.update(diary_params)
         format.html { redirect_to @diary, notice: 'Diary was successfully updated.' }
         format.json { render :show, status: :ok, location: @diary }
@@ -90,6 +93,6 @@ class DiariesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def diary_params
-    params.require(:diary).permit(:title, :text, :is_edited)
+    params.require(:diary).permit(:title, :text, :is_edited, :last)
   end
 end

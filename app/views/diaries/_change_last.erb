@@ -1,0 +1,30 @@
+<%= form_with(model: diary, local: true) do |form| %>
+  <% if diary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(diary.errors.count, "error") %> prohibited this diary from being saved:</h2>
+
+      <ul>
+        <% diary.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= @diary.title %>  (<%= @diary.created_day.day %>投稿)</h5>
+      <p class="card-text"><%= @diary.text %></p>
+    </div>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label "追加する文章" %>
+
+    <!--    https://www.web-knowledge-info.com/wp/ruby-on-rails32/ を参考にAction Textを導入しました-->
+    <%= form.rich_text_area :last %>
+  </div>
+  <div class="actions">
+    <%= form.submit "変更を反映する", class:"btn btn-dark"%>
+  </div>
+<% end %>
