@@ -36,7 +36,7 @@ class DiariesController < ApplicationController
 
     respond_to do |format|
       if @diary.save
-        format.html { redirect_to @diary, notice: '日記が投稿されました！' }
+        format.html { redirect_to "/diaries", notice: '日記が投稿されました！' }
         format.json { render :show, status: :created, location: @diary }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class DiariesController < ApplicationController
     respond_to do |format|
       @diary.is_edited = true
       if @diary.update(diary_params)
-        format.html { redirect_to @diary, notice: 'Diary was successfully updated.' }
+        format.html { redirect_to @diary, notice: '結末が変更されました！' }
         format.json { render :show, status: :ok, location: @diary }
       else
         format.html { render :edit }
