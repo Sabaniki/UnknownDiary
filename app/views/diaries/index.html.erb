@@ -16,7 +16,8 @@
     <tr>
       <!--      <td><%#= DiariesController::first_20chars diary %></td>-->
       <td><%= diary.title %></td>
-      <td><a href="/created_days/<%= diary.created_day_id %>"><%= DiariesController::get_created_day diary %></a></td>
+      <td><a href="/created_days/<%= diary.created_day_id %>"><%= diary.created_day.day %></a></td>
+<!--      <td><a href="/created_days/<%#= diary.created_day_id %>"><%#= DiariesController::get_created_day diary %></a></td>-->
       <td>
         <button type="button" class="btn btn-dark"><%= link_to '本文を読む', diary, {class: "text-white"} %></button>
       </td>

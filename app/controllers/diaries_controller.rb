@@ -80,10 +80,6 @@ class DiariesController < ApplicationController
     end
   end
 
-  def self.get_created_day(diary)
-    CreatedDay.find(diary.created_day_id).day
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
