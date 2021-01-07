@@ -14,44 +14,15 @@
   <tbody>
   <% @diaries.each do |diary| %>
     <tr>
-      <!--      <td><%#= DiariesController::first_20chars diary %></td>-->
       <td><%= diary.title %></td>
       <td><a href="/created_days/<%= diary.created_day_id %>"><%= diary.created_day.day %></a></td>
-<!--      <td><a href="/created_days/<%#= diary.created_day_id %>"><%#= DiariesController::get_created_day diary %></a></td>-->
       <td>
         <button type="button" class="btn btn-dark"><%= link_to '本文を読む', diary, {class: "text-white"} %></button>
       </td>
-      <!--        <td><%#= link_to '結末を', edit_diary_path(diary) %></td>-->
-      <td><%= link_to 'Destroy', diary, method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-
-<!--<table>-->
-<!--  <thead>-->
-<!--    <tr>-->
-<!--      <th>Text</th>-->
-<!--      <th>Created day</th>-->
-<!--      <th>Is edited</th>-->
-<!--      <th colspan="3"></th>-->
-<!--    </tr>-->
-<!--  </thead>-->
-
-<!--  <tbody>-->
-<%# @diaries.each do |diary| %>
-<!--      <tr>-->
-<!--        <td><%#= diary.text %></td>-->
-<!--        <td><%#= DiariesController::get_created_day(diary)%></td>-->
-<!--        <td><%#= diary.is_edited %></td>-->
-<!--        <td><%#= link_to 'Show', diary %></td>-->
-<!--        <td><%#= link_to 'Edit', edit_diary_path(diary) %></td>-->
-<!--        <td><%#= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-<!--      </tr>-->
-<%# end %>
-<!--  </tbody>-->
-<!--</table>-->
-
 <br>
 
 
