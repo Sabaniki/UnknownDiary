@@ -6,7 +6,7 @@
   <% @created_day.diaries.each do |diary| %>
     <tr>
       <td><%= diary.title %></td>
-      <td><button type="button" class="btn btn-dark"><%= link_to '本文を読む', diary, {class: "text-white"} %></button></td>
+      <td><%= button_to '本文を読む', diary, {method: :get, class: "btn btn-dark"} %></td>
     </tr>
   <% end %>
   </tbody>

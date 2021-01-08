@@ -8,8 +8,9 @@
 </div>
 <br>
 <% if !@diary.is_edited %>
-  <button type="button" class="btn btn-dark"> <%= link_to 'この日記の結末を変える', edit_diary_path(@diary), class: "text-white" %></button>
+  <%= button_to 'この日記の結末を変える', edit_diary_path(@diary), {method: :get, class: "btn btn-dark"} %>
 <% else %>
   この日記は既に結末が変更されているか、投稿者が変更を許可していません。
 <% end %>
-<%= link_to 'Back', diaries_path %>
+<br>
+<%= button_to '＜＜日記一覧に戻る', diaries_path, {method: :get, class: "btn btn-dark"} %>

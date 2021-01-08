@@ -1,5 +1,5 @@
 <h1>今日の日記</h1>
 
 <%= render 'form', diary: @diary %>
+<%= button_to '＜＜日記一覧に戻る', diaries_path, {method: :get, class: "btn btn-dark"} %>
 
-<%= link_to 'Back', diaries_path %>

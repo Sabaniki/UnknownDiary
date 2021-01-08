@@ -2,5 +2,5 @@
 
 <%= render 'change_last', diary: @diary %>
 
-<%= link_to 'Show', @diary %> |
-<%= link_to 'Back', diaries_path %>
+
+<%= button_to '＜＜日記一覧に戻る', diaries_path, {method: :get, class: "btn btn-dark"} %>

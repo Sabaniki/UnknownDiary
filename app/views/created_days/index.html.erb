@@ -7,7 +7,7 @@
     <% @created_days.each do |created_day| %>
       <tr>
         <td><%= created_day.day %></td>
-        <td><button type="button" class="btn btn-dark"><%= link_to 'この日に投稿された日記を見る', created_day, {class: "text-white"} %></button></td>
+        <td><%= button_to 'この日に投稿された日記を見る', created_day, {method: :get, class: "btn btn-dark"} %></td>
       </tr>
     <% end %>
   </tbody>

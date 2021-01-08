@@ -16,9 +16,7 @@
     <tr>
       <td><%= diary.title %></td>
       <td><a href="/created_days/<%= diary.created_day_id %>"><%= diary.created_day.day %></a></td>
-      <td>
-        <button type="button" class="btn btn-dark"><%= link_to '本文を読む', diary, {class: "text-white"} %></button>
-      </td>
+      <td><%= button_to '本文を読む', diary, {method: :get, class: "btn btn-dark"} %></td>
     </tr>
   <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 <br>
 
 
-<button type="button" class="btn btn-dark"><%= link_to '日記を投稿する', new_diary_path, {class: "text-white"} %></button>
+<%= button_to '日記を投稿する', new_diary_path, {method: :get, class: "btn btn-dark"} %>
