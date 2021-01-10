@@ -49,7 +49,7 @@ class DiariesController < ApplicationController
   # PATCH/PUT /diaries/1.json
   def update
     respond_to do |format|
-      @diary.is_edited = true
+      @diary.is_edited = true unless @diary.last.blank?
       if @diary.update(diary_params)
         format.html { redirect_to @diary, notice: '結末が変更されました！' }
         format.json { render :show, status: :ok, location: @diary }
