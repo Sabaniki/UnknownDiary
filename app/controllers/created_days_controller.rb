@@ -20,7 +20,4 @@ class CreatedDaysController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  def created_day_params
-    params.require(:created_day).permit(:day)
-  end
 end
