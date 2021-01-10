@@ -32,11 +32,11 @@ class DiariesController < ApplicationController
       today = new_day
     end
     @diary.created_day_id = today.id
-    @diary.last = ""
+    @diary.last = ''
 
     respond_to do |format|
       if @diary.save
-        format.html { redirect_to "/diaries", notice: '日記が投稿されました！' }
+        format.html { redirect_to '/diaries', notice: '日記が投稿されました！' }
         format.json { render :show, status: :created, location: @diary }
       else
         format.html { render :new }
@@ -58,15 +58,6 @@ class DiariesController < ApplicationController
         format.json { render json: @diary.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def self.first_20chars(diary)
-    local_text = diary.text
-    local_text.length <= 20 ? local_text : local_text[0, 20] + '...'
-  end
-
-  def created_day(diary)
-    CreatedDay.find(diary.created_day_id).day
   end
 
   private
